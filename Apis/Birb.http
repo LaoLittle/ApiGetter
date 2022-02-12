@@ -1,0 +1,4 @@
+GET https://v2.yiff.rest/animals/birb
+Accept: application/json
+
+###
