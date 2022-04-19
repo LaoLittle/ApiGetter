@@ -1,0 +1,11 @@
+POST https://api.jikipedia.com/go/search_entities
+Content-Type: application/json;charset=UTF-8
+
+{
+  "phrase": "emo",
+  "page": 2,
+  "size": 60
+}
+
+###
+

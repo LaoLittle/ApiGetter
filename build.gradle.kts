@@ -1,9 +1,9 @@
 plugins {
-    val kotlinVersion = "1.6.10"
+    val kotlinVersion = "1.6.20"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.serialization") version kotlinVersion
 
-    id("net.mamoe.mirai-console") version "2.10.0-RC2"
+    id("net.mamoe.mirai-console") version "2.10.1"
 }
 
 group = "org.laolittle.plugin"
@@ -15,8 +15,13 @@ repositories {
     mavenCentral()
 }
 
+fun skikoAwt(ver: String) = "org.jetbrains.skiko:skiko-awt-runtime-$ver"
+
 dependencies {
-    implementation("xyz.cssxsh.mirai:mirai-skija-plugin:1.0.0-RC1")
-    implementation("io.ktor:ktor-client-cio:1.6.7")
+    val ktorVer = "2.0.0"
+    implementation("io.ktor:ktor-client-core-jvm:$ktorVer")
+    implementation("io.ktor:ktor-client-okhttp:$ktorVer")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVer")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktorVer")
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 }
